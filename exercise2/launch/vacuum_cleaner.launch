@@ -1,0 +1,8 @@
+<launch>
+  <node name="robot_node" pkg="exercise2" type="robot_node" output="screen" />
+
+  <node name="charging_station_1" pkg="exercise2" type="charging_station_node" args="1 5.0" output="screen" />
+  <node name="charging_station_2" pkg="exercise2" type="charging_station_node" args="2 2.0" output="screen" />
+  <node name="charging_station_3" pkg="exercise2" type="charging_station_node" args="3 3.0" output="screen" />
+</launch>
+

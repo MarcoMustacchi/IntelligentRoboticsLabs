@@ -1,0 +1,8 @@
+# Request part
+std_msgs/Header header
+int32 station_id
+---
+# Response part
+std_msgs/Header header
+exercise1/RoomStatus room_status
+

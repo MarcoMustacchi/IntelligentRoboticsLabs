@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="exercise5" type="point_node" name="point_node" output="screen"/>
+
+  <node pkg="exercise5" type="leg_node" name="leg_node" output="screen"/>
+
+  <node pkg="exercise5" type="person_node" name="person_node" output="screen"/>
+  
+</launch>

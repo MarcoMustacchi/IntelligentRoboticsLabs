@@ -1,0 +1,12 @@
+# Goal definition
+std_msgs/Header header
+int32 max_battery_level
+---
+# Result definition
+std_msgs/Header header
+bool success
+---
+# Feedback definition
+std_msgs/Header header
+int32 current_battery_level
+
