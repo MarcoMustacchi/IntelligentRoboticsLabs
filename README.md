@@ -67,9 +67,30 @@ catkin build
 Download the BAGs from the following link: 
 https://drive.google.com/drive/folders/1gJWo28Gj0dLpFLCWEjEVjI-vEPymD7mp?usp=sharing
 
-#### Note
+#### Note 1
 You have to modify the name of the bag files as
+- bag_es_51.bag &rarr; bag_es_4_1.bag
+- bag_es_52.bag &rarr; bag_es_4_2.bag
+- bag_es_4.bag &rarr; bag_es_5.bag
 
+#### Note 2
+Place the bags as following:
+```makefile
+my_ros_workspace/            
+├── src/                    
+│   ├── exercise4_1_a/      
+│   │   ├── bags/       
+│   │   │   ├── bag_es_4_1.bag
+│   ├── exercise4_1_b/      
+│   │   ├── bags/       
+│   │   │   ├── bag_es_4_1.bag
+│   ├── exercise4_2/      
+│   │   ├── bags/     
+│   │   │   ├── bag_es_4_2.bag  
+│   ├── exercise5/      
+│   │   ├── bags/      
+│   │   │   ├── bag_es_5.bag
+```
 
 ## Preliminary Step
 Remember to add 
