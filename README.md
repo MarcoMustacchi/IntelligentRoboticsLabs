@@ -63,6 +63,14 @@ catkin build exercise1
 catkin build 
 ```
 
+### Download the BAG
+Download the BAGs from the following link: 
+https://drive.google.com/drive/folders/1gJWo28Gj0dLpFLCWEjEVjI-vEPymD7mp?usp=sharing
+
+#### Note
+You have to modify the name of the bag files as
+
+
 ## Preliminary Step
 Remember to add 
 ```bash
