@@ -76,7 +76,7 @@ You have to modify the name of the bag files as
 ### Note 2
 Place the bags as following:
 ```makefile
-my_ros_workspace/            
+intelligentRoboticsLab_ws/            
 ├── src/                    
 │   ├── exercise4_1_a/      
 │   │   ├── bags/       
