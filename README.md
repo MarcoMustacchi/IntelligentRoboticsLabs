@@ -64,7 +64,7 @@ catkin build
 ```
 
 ## Download the BAG
-Download the BAGs from the following link: 
+Download the BAGs from the following link:\
 https://drive.google.com/drive/folders/1gJWo28Gj0dLpFLCWEjEVjI-vEPymD7mp?usp=sharing
 
 ### Note 1
