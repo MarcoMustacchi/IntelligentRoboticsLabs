@@ -4,6 +4,18 @@
 
 <h1 align="center">Intelligent Robotics - Laboratory Activities <br> UniPd</h1>
 
+### Fast and simple guide to start a Docker container from a Docker image
+
+Docker expects to have a single Dockerfile (called exactly Dockerfile) in the current folder. Then, starting from that, using:
+```bash
+docker build -t ros-noetic-ubuntu20.04 .
+```
+you create a Docker image called `ros-noetic-ubuntu20.04` in the current folder. Then using:
+```bash
+ docker run -it ros-noetic-ubuntu20.04
+```
+you start a Docker container from the `ros-noetic-ubuntu20.04` image.
+
 ## Setup 
 Ubuntu 18.04 with ROS Melodic using [Terminator](https://gnome-terminator.org/) as shell
 
