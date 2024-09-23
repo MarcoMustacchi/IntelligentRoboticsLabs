@@ -68,6 +68,9 @@ RUN cd ./catkin_ws/src \
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc \
     && echo "source /catkin_ws/devel/setup.bash" >> /root/.bashrc
 
+# Install Terminator
+RUN apt-get install -y terminator
+
 # Use bash as the default shell
 SHELL ["/bin/bash", "-c"]
 
