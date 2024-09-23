@@ -4,17 +4,52 @@
 
 <h1 align="center">Intelligent Robotics - Laboratory Activities <br> UniPd</h1>
 
-### Fast and simple guide to start a Docker container from a Docker image
+## Simple guide to start a Docker container from a Docker image
 
+### Docker container without GUI
 Docker expects to have a single Dockerfile (called exactly Dockerfile) in the current folder. Then, starting from that, using:
 ```bash
 docker build -t ros-noetic-ubuntu20.04 .
 ```
 you create a Docker image called `ros-noetic-ubuntu20.04` in the current folder. Then using:
 ```bash
- docker run -it ros-noetic-ubuntu20.04
+docker run -it ros-noetic-ubuntu20.04
 ```
 you start a Docker container from the `ros-noetic-ubuntu20.04` image.
+
+### Docker container with GUI
+Docker expects to have a single Dockerfile (called exactly Dockerfile) in the current folder. Then, starting from that, using:
+```bash
+docker build -t ros-noetic-ubuntu20.04 .
+```
+you create a Docker image called `ros-noetic-ubuntu20.04` in the current folder. <br>
+Allow local docker containers to access the X server
+```bash
+xhost +local:docker
+```
+Then using:
+```bash
+docker run -it --rm \
+    --env="DISPLAY=$DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    ros-noetic-ubuntu20.04
+```
+you start a Docker container from the `ros-noetic-ubuntu20.04` image. <br>
+Inside the Docker container, you can use Terminator to easily open multiple terminals
+```bash
+terminator
+```
+> Note: using `terminator` you start in the /root directory. You can simply type
+> ```bash
+> cd ..
+> ```
+> to go in the parent folder, which is the default starting folder of Docker.
+
+After you’re done testing, reset the permissions:
+```bash
+xhost -local:docker
+```
 
 ## Setup 
 Ubuntu 18.04 with ROS Melodic using [Terminator](https://gnome-terminator.org/) as shell
