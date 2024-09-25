@@ -13,7 +13,8 @@ RUN apt-get install -y \
     gnupg2 \
     curl \
     wget \
-    build-essential 
+    build-essential \
+    python3
 
 # Clean up package lists
 RUN rm -rf /var/lib/apt/lists/*
@@ -33,6 +34,7 @@ RUN apt-get install -y ros-noetic-desktop-full
 # Install ROS tools
 RUN apt-get install -y \
     python3-catkin-tools \
+    python3-pip \
     python3-rosdep \
     python3-rosinstall \
     python3-rosinstall-generator \
@@ -67,6 +69,20 @@ RUN cd ./catkin_ws/src \
 # Source the ROS setup.bash (for ROS and for package) for future terminal sessions
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc \
     && echo "source /catkin_ws/devel/setup.bash" >> /root/.bashrc
+    
+# Install gdown for downloading Google Drive files
+RUN pip3 install gdown
+
+# Download specific files from Google Drive
+RUN gdown https://drive.google.com/uc?id=1l4F-NeB3pIbcOJldrcbEl_9uD8pZkvvd -O bag_es_5.bag \
+    && gdown https://drive.google.com/uc?id=1nXVIfmvu5_TDXj7m8dozHYPqobKHMgWb -O bag_es_4_1.bag \
+    && gdown https://drive.google.com/uc?id=1roUrXFL2e6RHFOaVaURIilHD2k5Ge_rL -O bag_es_4_2.bag
+    
+# Move each .bag file in the correct folder
+RUN mv bag_es_4_1.bag /catkin_ws/src/exercise4_1_a/bags/ \
+    && cp /catkin_ws/src/exercise4_1_a/bags/bag_es_4_1.bag /catkin_ws/src/exercise4_1_b/bags/ \
+    && mv bag_es_4_2.bag /catkin_ws/src/exercise4_2/bags/ \
+    && mv bag_es_5.bag /catkin_ws/src/exercise5/bags/
 
 # Install Terminator
 RUN apt-get install -y terminator
@@ -76,4 +92,3 @@ SHELL ["/bin/bash", "-c"]
 
 # Default command
 CMD ["bash"]
-
