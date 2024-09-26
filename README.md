@@ -36,11 +36,11 @@ docker run -it --rm \
     ros-noetic-ubuntu20.04
 ```
 you start a Docker container from the `ros-noetic-ubuntu20.04` image. <br>
-Inside the Docker container, you can use Terminator to easily open multiple terminals
+Inside the Docker container, you can use `terminator` to easily open multiple terminals
 ```bash
 terminator
 ```
-> Note: using `terminator` you start in the /root directory. You can simply type
+> **Note**: using `terminator` you start in the /root directory. You can simply type
 > ```bash
 > cd ..
 > ```
